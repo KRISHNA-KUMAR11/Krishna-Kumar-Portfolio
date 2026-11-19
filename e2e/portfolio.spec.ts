@@ -4,7 +4,10 @@ test("home renders the portfolio", async ({ page }) => {
   await page.goto("/")
   await expect(page.getByRole("heading", { level: 1, name: "Krishna Kumar Tummala" })).toBeVisible()
   await expect(page.getByRole("heading", { name: "Featured projects" })).toBeVisible()
-  await expect(page.getByRole("link", { name: "GitHub" })).toHaveCount(0)
+  await expect(page.getByRole("link", { name: "GitHub" }).first()).toHaveAttribute(
+    "href",
+    "https://github.com/KRISHNA-KUMAR11",
+  )
 })
 
 test("theme toggle stores the light theme", async ({ page }) => {

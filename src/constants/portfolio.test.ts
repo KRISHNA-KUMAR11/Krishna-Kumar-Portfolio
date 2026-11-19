@@ -17,9 +17,12 @@ describe("portfolio content", () => {
     expect(new Set(projects.map((project) => project.slug)).size).toBe(3)
     expect(site.email).toBe("krishnakumarnaidu11@gmail.com")
     expect(site.phone).toBe("+91 9912633527")
-    expect(site.githubUsername).toBe("")
-    expect(site.linkedinUrl).toBe("")
-    expect(profileLinks()).toEqual([])
+    expect(site.githubUsername).toBe("KRISHNA-KUMAR11")
+    expect(site.linkedinUrl).toBe("https://www.linkedin.com/in/krishna-kumar-s0499/")
+    expect(profileLinks()).toEqual([
+      { href: "https://github.com/KRISHNA-KUMAR11", label: "GitHub" },
+      { href: "https://www.linkedin.com/in/krishna-kumar-s0499/", label: "LinkedIn" },
+    ])
   })
 
   it("links architecture pages only where a design exists", () => {

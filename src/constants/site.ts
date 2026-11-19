@@ -4,14 +4,14 @@ export const site = {
   name: "Krishna Kumar Tummala",
   role: "Full Stack Engineer",
   company: "ExcelHire",
-  tenure: "2+ years",
+  tenure: "2.6 years",
   email: environment.email,
   phone: environment.phone,
   phoneHref: environment.phoneHref,
-  githubUsername: "",
-  linkedinUrl: "",
+  githubUsername: "KRISHNA-KUMAR11",
+  linkedinUrl: "https://www.linkedin.com/in/krishna-kumar-s0499/",
   summary:
-    "I build hiring and operations software with typed interfaces, authenticated APIs, and the data and delivery work that keeps them reliable.",
+    "I design and maintain web apps with Angular, React, Node.js, Express, NestJS, MongoDB, and AWS. Most of the work is APIs, access control, and the data behind them.",
 } as const
 
 export const sections = [

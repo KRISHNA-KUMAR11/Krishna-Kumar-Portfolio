@@ -25,15 +25,21 @@ function renderHome() {
 }
 
 describe("home page", () => {
-  it("renders the name, every section, and no social profile links", () => {
+  it("renders the name, every section, and the profile links", () => {
     renderHome()
     expect(screen.getByRole("heading", { level: 1, name: "Krishna Kumar Tummala" })).toBeInTheDocument()
     for (const heading of headings) {
       expect(screen.getByRole("heading", { level: 2, name: heading })).toBeInTheDocument()
     }
     expect(screen.getByRole("contentinfo")).toHaveTextContent("krishnakumarnaidu11@gmail.com")
-    expect(screen.queryByRole("link", { name: "GitHub" })).not.toBeInTheDocument()
-    expect(screen.queryByRole("link", { name: "LinkedIn" })).not.toBeInTheDocument()
+    expect(screen.getAllByRole("link", { name: "GitHub" })[0]).toHaveAttribute(
+      "href",
+      "https://github.com/KRISHNA-KUMAR11",
+    )
+    expect(screen.getAllByRole("link", { name: "LinkedIn" })[0]).toHaveAttribute(
+      "href",
+      "https://www.linkedin.com/in/krishna-kumar-s0499/",
+    )
   })
 
   it("filters the project list", async () => {

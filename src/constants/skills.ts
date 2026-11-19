@@ -1,12 +1,13 @@
 export const skillGroups = [
   {
     title: "Frontend",
-    items: ["React", "Angular", "TypeScript", "JavaScript", "HTML", "CSS"],
+    items: ["React", "Angular", "TypeScript", "JavaScript", "HTML", "CSS", "SCSS"],
   },
   {
     title: "Backend",
     items: [
       "Node.js",
+      "Express.js",
       "NestJS",
       "Java 21",
       "Spring Boot",
@@ -17,19 +18,26 @@ export const skillGroups = [
   },
   {
     title: "Data",
-    items: ["MongoDB", "Prisma", "SQL"],
+    items: ["MongoDB", "Mongoose", "Prisma", "SQL"],
   },
   {
     title: "Cloud and DevOps",
-    items: ["Docker", "Kubernetes", "AWS", "Jenkins", "Ansible", "Git", "CI/CD"],
+    items: ["AWS", "AWS S3", "Docker", "Kubernetes", "Jenkins", "GitHub Actions", "Linux", "Ansible", "Git", "CI/CD"],
   },
   {
     title: "Engineering practice",
     items: [
       "RBAC",
+      "Socket.IO",
+      "RabbitMQ",
       "WebRTC signalling",
+      "Stripe",
+      "OAuth",
+      "Swagger",
       "Postman",
       "Jest",
+      "Supertest",
+      "Playwright",
       "Pino",
       "Razorpay",
       "Agile",

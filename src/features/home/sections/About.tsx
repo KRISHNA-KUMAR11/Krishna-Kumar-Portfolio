@@ -13,10 +13,10 @@ export function About() {
               <SectionHeading
                 id="about"
                 title="About me"
-                intro="I am a full-stack engineer at ExcelHire. Since June 2024 I have worked from associate to full-stack, building typed frontends, REST APIs, authentication, and the database and delivery pieces around them."
+                intro="I am a full-stack engineer at ExcelHire, with 2.6 years building web applications. I started as an associate in June 2024 and moved to full-stack in November 2024."
               />
               <p className="max-w-2xl text-base leading-7 text-muted">
-                Day to day that means Angular and React interfaces, NestJS and Node.js services, and MongoDB. I also work in Java and Spring Boot, and I care about permission checks, logs, and tests being part of the feature rather than a follow-up. Before ExcelHire I automated a CI/CD pipeline on AWS. Alongside the product work I built package and recipient APIs with versioning, rate limiting, and structured logging.
+                Day to day that is Angular and React on the screen, and Node.js, Express, or NestJS behind it, with MongoDB and Mongoose. I have also worked with Socket.IO, RabbitMQ, JWT and role checks, third-party APIs, and deploys on AWS with Docker. Java and Spring Boot are part of the same toolkit. Before ExcelHire I put a CI/CD pipeline on EC2. On my own time I built package-tracking APIs and an interview platform.
               </p>
             </div>
             <dl className="grid content-start gap-6 rounded-lg border border-line bg-surface p-5">

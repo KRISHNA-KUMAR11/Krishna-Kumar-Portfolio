@@ -1,6 +1,6 @@
 export const highlights = [
   {
-    title: "2+ years",
+    title: "2.6 years",
     text: "Associate Software Engineer from June 2024, then Full-Stack Engineer at ExcelHire from November 2024.",
   },
   {

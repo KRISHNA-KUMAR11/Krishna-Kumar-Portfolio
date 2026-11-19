@@ -49,7 +49,7 @@ src/
 └── constants/
 ```
 
-Profile, projects, and architecture copy live in `src/constants/`. Mail and phone settings live in `src/environments/environment.ts`. To show public profiles later, set `githubUsername` and `linkedinUrl` in `src/constants/site.ts`. Empty values render no icons and no links.
+Profile, projects, and architecture copy live in `src/constants/`. Mail and phone settings live in `src/environments/environment.ts`. GitHub and LinkedIn URLs live in `src/constants/site.ts`.
 
 ## Deploy
 
