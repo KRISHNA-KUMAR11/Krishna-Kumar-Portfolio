@@ -24,8 +24,8 @@ export function SectionLink({
       onClick={onNavigate}
       aria-current={current ? "location" : undefined}
       className={cx(
-        "text-sm",
-        current ? "text-ink" : "text-muted hover:text-ink",
+        "text-sm transition-colors",
+        current ? "text-accent" : "text-muted hover:text-ink",
         className,
       )}
     >

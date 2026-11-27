@@ -6,11 +6,12 @@ import { SectionHeading } from "../../../shared/components/ui/SectionHeading"
 
 export function ArchitecturePreview() {
   return (
-    <section id="architecture" aria-labelledby="architecture-title" className="py-16 sm:py-20">
+    <section id="architecture" aria-labelledby="architecture-title" className="py-20 sm:py-28">
       <div className={container}>
         <Reveal>
           <SectionHeading
             id="architecture"
+            index="07 — Systems"
             title="Architecture and system design"
             intro="Two write-ups of how the request path, data, and supporting services fit together."
           />
@@ -19,11 +20,11 @@ export function ArchitecturePreview() {
               <li key={doc.slug}>
                 <Link
                   to={`/architecture/${doc.slug}`}
-                  className="block h-full rounded-lg border border-line bg-surface p-5 hover:border-accent"
+                  className="lift group block h-full border border-line bg-surface p-7 sm:p-8"
                 >
-                  <h3 className="text-xl font-medium text-ink">{doc.title}</h3>
+                  <h3 className="font-serif text-3xl font-medium tracking-[-0.03em] text-ink group-hover:text-accent">{doc.title}</h3>
                   <p className="mt-3 text-sm leading-6 text-muted">{doc.summary}</p>
-                  <p className="mt-4 text-sm font-medium text-accent">Read the design</p>
+                  <p className="mt-6 text-sm font-medium text-ink">Read the design</p>
                 </Link>
               </li>
             ))}

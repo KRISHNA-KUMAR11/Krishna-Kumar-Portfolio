@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Fraunces", ui-serif, Georgia, serif;
 }
 
 @theme inline {
@@ -20,30 +20,30 @@
 
 :root,
 .light {
-  --canvas: #f4f1ea;
-  --surface: #fffcf8;
-  --ink: #1c1915;
-  --muted: #514c44;
-  --line: #e3dbd0;
-  --accent: #8a4b16;
-  --accent-ink: #fffaf6;
-  --accent-soft: #f6eadc;
-  --field: #fffcf8;
-  --field-line: #c9bfb2;
+  --canvas: #fff8ef;
+  --surface: #ffe4c7;
+  --ink: #1f1d2b;
+  --muted: #5e5870;
+  --line: #f0c9a4;
+  --accent: #ff7a00;
+  --accent-ink: #1f1d2b;
+  --accent-soft: #ffa94d;
+  --field: #fff8ef;
+  --field-line: #f0c9a4;
   color-scheme: light;
 }
 
 .dark {
-  --canvas: #0e1014;
-  --surface: #171a20;
-  --ink: #f1ece4;
-  --muted: #b7b1a6;
-  --line: #3c4452;
-  --accent: #e0c39a;
-  --accent-ink: #1c140c;
-  --accent-soft: #2c261e;
-  --field: #101318;
-  --field-line: #7b8494;
+  --canvas: #121212;
+  --surface: #1c1c1c;
+  --ink: #f2f2f2;
+  --muted: #b5b5b5;
+  --line: #2e2e2e;
+  --accent: #f4a62a;
+  --accent-ink: #121212;
+  --accent-soft: #2a261c;
+  --field: #161616;
+  --field-line: #3a3a3a;
   color-scheme: dark;
 }
 
@@ -54,10 +54,57 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background: var(--canvas);
   color: var(--ink);
   font-family: var(--font-sans);
+  letter-spacing: -0.011em;
   text-rendering: optimizeLegibility;
+  background-color: var(--canvas);
+  background-image:
+    radial-gradient(720px 420px at 100% -8%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 62%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.35'/></svg>");
+  background-repeat: no-repeat, repeat;
+  background-size: auto, 180px 180px;
+  background-attachment: fixed, fixed;
+}
+
+.font-serif {
+  font-optical-sizing: auto;
+}
+
+.ticker {
+  overflow: hidden;
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker 48s linear infinite;
+}
+
+.ticker:hover .ticker-track {
+  animation-play-state: paused;
+}
+
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.lift {
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.lift:hover {
+  background-color: color-mix(in srgb, var(--accent-soft) 70%, var(--surface));
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
 }
 
 :focus-visible {

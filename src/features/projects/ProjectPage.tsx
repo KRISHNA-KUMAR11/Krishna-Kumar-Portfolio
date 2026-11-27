@@ -25,7 +25,7 @@ export function ProjectPage() {
           <span aria-hidden="true"> / </span>
           Projects
         </p>
-        <h1 className="mt-4 font-serif text-4xl text-ink sm:text-5xl">{project.title}</h1>
+        <h1 className="mt-6 font-serif text-[clamp(2.6rem,5vw,4.6rem)] font-medium leading-[0.92] tracking-[-0.035em] text-ink">{project.title}</h1>
         <p className="mt-3 text-sm text-muted">
           {project.role} · {project.period}
         </p>
@@ -97,7 +97,7 @@ export function ProjectPage() {
           <p className="mt-10">
             <Link
               to={`/architecture/${project.architectureSlug}`}
-              className="inline-flex rounded-md bg-accent px-4 py-2.5 text-sm font-medium text-accent-ink"
+              className="inline-flex h-12 items-center rounded-full bg-accent px-6 text-sm font-medium text-accent-ink"
             >
               View system design
             </Link>
