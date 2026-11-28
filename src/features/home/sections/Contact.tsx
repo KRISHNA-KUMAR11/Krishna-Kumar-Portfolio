@@ -31,13 +31,14 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" aria-labelledby="contact-title" className="py-16 sm:py-20">
+    <section id="contact" aria-labelledby="contact-title" className="py-20 sm:py-28">
       <div className={container}>
         <Reveal>
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
             <div>
               <SectionHeading
                 id="contact"
+                index="09 — Start a conversation"
                 title="Contact"
                 intro="Send a note about a role or a project. A valid form opens your email app with the message addressed to me."
               />
@@ -54,7 +55,7 @@ export function Contact() {
                 </li>
               </ul>
             </div>
-            <form className="grid gap-4 rounded-lg border border-line bg-surface p-5" noValidate onSubmit={handleSubmit(onSubmit)}>
+            <form className="grid gap-5 border border-line bg-surface p-6 sm:p-8" noValidate onSubmit={handleSubmit(onSubmit)}>
               {fields.map((field) => {
                 const error = errors[field.name]
                 const id = `contact-${field.name}`
@@ -68,7 +69,7 @@ export function Contact() {
                       <textarea
                         id={id}
                         rows={6}
-                        className="mt-1 w-full rounded-md border border-field-line bg-field px-3 py-2 text-ink"
+                        className="mt-1.5 w-full rounded-md border border-field-line bg-field px-3 py-3 text-base text-ink"
                         aria-invalid={error ? true : undefined}
                         aria-describedby={describedBy}
                         {...register(field.name)}
@@ -78,7 +79,7 @@ export function Contact() {
                         id={id}
                         type={field.type}
                         autoComplete={field.name === "name" ? "name" : field.name === "email" ? "email" : undefined}
-                        className="mt-1 w-full rounded-md border border-field-line bg-field px-3 py-2 text-ink"
+                        className="mt-1.5 w-full rounded-md border border-field-line bg-field px-3 py-3 text-base text-ink"
                         aria-invalid={error ? true : undefined}
                         aria-describedby={describedBy}
                         {...register(field.name)}
@@ -92,7 +93,7 @@ export function Contact() {
                   </div>
                 )
               })}
-              <button type="submit" className="inline-flex w-fit items-center rounded-md bg-accent px-4 py-2.5 text-sm font-medium text-accent-ink">
+              <button type="submit" className="inline-flex h-12 w-fit items-center rounded-full bg-accent px-6 text-sm font-medium text-accent-ink">
                 Send message
               </button>
               {sent ? (

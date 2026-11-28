@@ -55,10 +55,10 @@ export function Navbar() {
   }, [open])
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-canvas">
+    <header className="sticky top-0 z-40 border-b border-line/80 bg-canvas/80 backdrop-blur-xl">
       <div className={cx(container, "flex h-16 items-center gap-4")}>
         <Link to="/" className="mr-auto flex items-center gap-3 text-ink">
-          <span className="grid size-9 place-items-center rounded-md bg-accent-soft font-serif text-accent">
+          <span className="grid size-9 place-items-center rounded-full bg-ink font-serif text-sm italic text-canvas">
             KT
           </span>
           <span className="leading-tight">
@@ -69,17 +69,26 @@ export function Navbar() {
 
         <nav aria-label="Primary" className="hidden xl:block">
           <ul className="flex items-center gap-4">
-            {sections.map((section) => (
-              <li key={section.id}>
-                <SectionLink
-                  id={section.id}
-                  label={section.label}
-                  current={active === section.id}
-                />
-              </li>
-            ))}
+            {sections
+              .filter((section) => section.id !== "contact")
+              .map((section) => (
+                <li key={section.id}>
+                  <SectionLink
+                    id={section.id}
+                    label={section.label}
+                    current={active === section.id}
+                  />
+                </li>
+              ))}
           </ul>
         </nav>
+
+        <Link
+          to={location.pathname === "/" ? { hash: "contact" } : { pathname: "/", hash: "contact" }}
+          className="hidden h-9 items-center rounded-full bg-accent px-4 text-sm font-medium text-accent-ink xl:inline-flex"
+        >
+          Contact
+        </Link>
 
         <ThemeToggle />
 

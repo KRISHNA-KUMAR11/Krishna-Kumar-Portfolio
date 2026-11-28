@@ -23,22 +23,10 @@ export const expertise = [
 
 export const activity = [
   {
-    period: "May 2023 – June 2023",
-    title: "CI/CD pipeline",
+    period: "November 2024 – Present",
+    title: "Full-Stack Engineer, ExcelHire",
     detail:
-      "A short DevOps project. Jenkins built the app, Docker and Kubernetes ran it, Ansible configured the box, and the deploy went to EC2 over SSH. Tomcat served it.",
-  },
-  {
-    period: "June 2024 – November 2024",
-    title: "Associate Software Engineer, ExcelHire",
-    detail:
-      "First job. I was on JavaScript, TypeScript, Node.js, and MongoDB: small API changes, database updates, and a lot of Postman. We used GitHub.",
-  },
-  {
-    period: "October 2024 – February 2025",
-    title: "Package tracking APIs",
-    detail:
-      "NestJS services for packages and recipients. Normal CRUD, plus a bulk import. JWT on the routes, a rate limit, and /v1 so the contract could change later. Jest and Pino were added with the API, not after.",
+      "Promoted in November 2024. Angular and React screens, NestJS APIs, MongoDB. Most of the work is auth, permissions, and whatever feature is in the current sprint, including a couple of AI-backed ones.",
   },
   {
     period: "April 2025 – June 2025",
@@ -47,9 +35,21 @@ export const activity = [
       "My project, not a client ticket. Schedule a live interview, a timed test, or both. The call is WebRTC with Socket.IO only for signalling. The test stores answers, a face recording, and integrity events, then an interviewer grades it.",
   },
   {
-    period: "November 2024 – Present",
-    title: "Full-Stack Engineer, ExcelHire",
+    period: "October 2024 – February 2025",
+    title: "Package tracking APIs",
     detail:
-      "Promoted in November 2024. Angular and React screens, NestJS APIs, MongoDB. Most of the work is auth, permissions, and whatever feature is in the current sprint, including a couple of AI-backed ones.",
+      "NestJS services for packages and recipients. Normal CRUD, plus a bulk import. JWT on the routes, a rate limit, and /v1 so the contract could change later. Jest and Pino were added with the API, not after.",
+  },
+  {
+    period: "June 2024 – November 2024",
+    title: "Associate Software Engineer, ExcelHire",
+    detail:
+      "First job. I was on JavaScript, TypeScript, Node.js, and MongoDB: small API changes, database updates, and a lot of Postman. We used GitHub.",
+  },
+  {
+    period: "May 2023 – June 2023",
+    title: "CI/CD pipeline",
+    detail:
+      "A short DevOps project. Jenkins built the app, Docker and Kubernetes ran it, Ansible configured the box, and the deploy went to EC2 over SSH. Tomcat served it.",
   },
 ] as const

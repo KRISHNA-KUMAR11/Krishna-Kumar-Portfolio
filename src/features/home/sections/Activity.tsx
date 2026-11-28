@@ -1,17 +1,17 @@
 import { activity } from "../../../constants/expertise"
 import { profileLinks } from "../../../constants/site"
 import { container } from "../../../helpers/cx"
-import { Reveal } from "../../../shared/components/ui/Reveal"
+import { Reveal, Stagger, StaggerItem } from "../../../shared/components/ui/Reveal"
 import { SectionHeading } from "../../../shared/components/ui/SectionHeading"
 
 export function Activity() {
   const profiles = profileLinks()
 
   return (
-    <section id="activity" aria-labelledby="activity-title" className="border-y border-line py-16 sm:py-20">
+    <section id="activity" aria-labelledby="activity-title" className="border-y border-line bg-surface py-20 sm:py-28">
       <div className={container}>
         <Reveal>
-          <SectionHeading id="activity" title="Recent work" />
+          <SectionHeading id="activity" index="08 — Timeline" title="Recent work" />
           {profiles.length > 0 ? (
             <ul className="mb-6 flex flex-wrap gap-4">
               {profiles.map((profile) => (
@@ -23,17 +23,17 @@ export function Activity() {
               ))}
             </ul>
           ) : null}
-          <ol className="divide-y divide-line border-y border-line">
+          <Stagger as="ol" className="divide-y divide-line border-y border-line">
             {activity.map((item) => (
-              <li key={item.title} className="py-5">
-                <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
-                  <h3 className="text-base font-medium text-ink">{item.title}</h3>
-                  <p className="text-sm text-muted">{item.period}</p>
+              <StaggerItem as="li" key={item.title} className="grid gap-2 py-7 sm:grid-cols-[14rem_1fr] sm:gap-8">
+                <p className="text-sm text-accent">{item.period}</p>
+                <div>
+                  <h3 className="font-serif text-2xl font-medium tracking-[-0.03em] text-ink">{item.title}</h3>
+                  <p className="mt-2 max-w-3xl text-sm leading-6 text-muted">{item.detail}</p>
                 </div>
-                <p className="mt-2 max-w-3xl text-sm leading-6 text-muted">{item.detail}</p>
-              </li>
+              </StaggerItem>
             ))}
-          </ol>
+          </Stagger>
         </Reveal>
       </div>
     </section>

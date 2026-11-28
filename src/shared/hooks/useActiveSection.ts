@@ -1,27 +1,34 @@
 import { useEffect, useState } from "react"
 
+const marker = 88
+
 export function useActiveSection(ids: readonly string[]): string {
   const [active, setActive] = useState("")
   const key = ids.join("|")
 
   useEffect(() => {
-    const elements = ids
-      .map((id) => document.getElementById(id))
-      .filter((element): element is HTMLElement => element !== null)
-    if (elements.length === 0) return
+    if (ids.length === 0) {
+      setActive("")
+      return
+    }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
-        if (visible?.target.id) setActive(visible.target.id)
-      },
-      { rootMargin: "-30% 0px -55% 0px", threshold: [0.15, 0.4] },
-    )
+    function update() {
+      let current = ""
+      for (const id of ids) {
+        const element = document.getElementById(id)
+        if (!element) continue
+        if (element.getBoundingClientRect().top <= marker) current = id
+      }
+      setActive(current)
+    }
 
-    for (const element of elements) observer.observe(element)
-    return () => observer.disconnect()
+    update()
+    window.addEventListener("scroll", update, { passive: true })
+    window.addEventListener("resize", update)
+    return () => {
+      window.removeEventListener("scroll", update)
+      window.removeEventListener("resize", update)
+    }
   }, [ids, key])
 
   return active

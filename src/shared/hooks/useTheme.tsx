@@ -22,7 +22,7 @@ function applyTheme(theme: Theme): void {
   document.documentElement.classList.remove("light", "dark")
   document.documentElement.classList.add(theme)
   const meta = document.querySelector('meta[name="theme-color"]')
-  if (meta) meta.setAttribute("content", theme === "dark" ? "#0e1014" : "#f4f1ea")
+  if (meta) meta.setAttribute("content", theme === "dark" ? "#121212" : "#fff8ef")
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {

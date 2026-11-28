@@ -29,7 +29,7 @@ export function ArchitecturePage() {
             <span aria-hidden="true"> / </span>
             Architecture
           </p>
-          <h1 className="mt-4 font-serif text-4xl text-ink sm:text-5xl">{doc.title}</h1>
+          <h1 className="mt-6 font-serif text-[clamp(2.6rem,5vw,4.6rem)] font-medium leading-[0.92] tracking-[-0.035em] text-ink">{doc.title}</h1>
           <p className="mt-4 text-base leading-7 text-muted">{doc.summary}</p>
           {project ? (
             <p className="mt-4">
